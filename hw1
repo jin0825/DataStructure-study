@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main() {
+
+	int a, b;
+	int i, k;
+	int** lala;
+	scanf("%d", &a);
+	scanf("%d", &b);
+
+	lala = (int**)malloc(sizeof(int*) * a);
+	for (i = 0; i < a; i++) {
+		lala[i] = (int*)malloc(sizeof(int) * b);
+	}
+	
+	for (i = 0; i < a; i++) {
+		free(lala[i]);
+	}
+
+	free(lala);
+	return 0;
+}
